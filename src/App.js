@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import Header from './components/Header/Header';
+import Course from './components/Course/Course';
+import { useEffect, useState } from 'react';
+import courseData from './courseData/courseData.json';
+import {Container, Row, Col} from 'react-bootstrap';
 import './App.css';
+import Cart from './components/Cart/Cart';
 
 function App() {
+  const [courses, setCourses] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  useEffect(()=>{
+    // const courseDataFive = courseData.slice(0,15 );
+    setCourses(courseData);
+  }, [])
+
+  //Click Handelar Function to Enroll course
+  const handleCourseToCart = (courseToCart)=>{
+    const newCart = [...cart, courseToCart ];
+    setCart(newCart);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header courseCount = {cart}></Header>
+        <div className="d-flex mx-4">
+          <div className="col-md-10">
+              <Row className="d-flex align-items-center">
+                <Col md={5}><hr/></Col>
+                <Col md={2}>
+                  <div className ="course-title"> <span className="our-course">Our Cources</span></div>
+                </Col>
+                <Col md={5}><hr/></Col>
+              </Row>
+              
+              <Row className="d-flex align-items-center justify-content-center">
+                {
+                  courses.map(course => <Course course = {course} key ={course.id} handleCourseToCart ={handleCourseToCart} ></Course>)
+                }
+              </Row>
+          </div>
+          <div className="col-md-2 mt-5 bg-light">
+              <Cart courseCount = {cart}></Cart>
+          </div>
+        </div>
+      
+       
+      
+      
+      
+
+      
     </div>
   );
 }

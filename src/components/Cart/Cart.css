@@ -1,0 +1,21 @@
+
+.bottom-cart {
+    text-align: left;
+    margin-right: 5px;
+
+    
+}
+
+.bottom-cart h4 {
+    text-align: center;
+    margin: -25px -20px  10px -15px ;
+    padding: 5px 0;
+    color: white   
+}
+
+table {
+    width: 100%;
+}
+tr {
+    border-bottom: 1px solid lightgray;
+}

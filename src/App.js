@@ -11,8 +11,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   useEffect(()=>{
-    // const courseDataFive = courseData.slice(0,15 );
-    setCourses(courseData);
+     setCourses(courseData);
   }, [])
 
   //Click Handelar Function to Enroll course
@@ -27,11 +26,11 @@ function App() {
         <div className="d-flex mx-4">
           <div className="col-md-10">
               <Row className="d-flex align-items-center">
-                <Col md={5}><hr/></Col>
-                <Col md={2}>
-                  <div className ="course-title"> <span className="our-course">Our Cources</span></div>
+                <Col md={4}><hr/></Col>
+                <Col md={4}>
+                  <div className ="course-title"> <span className="our-course">Our Courses</span></div>
                 </Col>
-                <Col md={5}><hr/></Col>
+                <Col md={4}><hr/></Col>
               </Row>
               
               <Row className="d-flex align-items-center justify-content-center">

@@ -7,7 +7,7 @@ const Cart = (props) => {
 
     //total product price
     const total = courseCount.reduce((total, prd) => total + prd.price , 0)
-    const vat = total * .10;
+    const vat = total * .05;
 
 
     return (
@@ -22,16 +22,16 @@ const Cart = (props) => {
                                 <td> <h5>{courseCount.length}</h5> </td>
                             </tr>
                             <tr>
-                                <td> <p>Price :</p></td>
-                                <td><p>{total}</p> </td>
+                                <td> <p>Price : </p></td>
+                                <td><p> $ {total}</p> </td>
                             </tr>
                             <tr>
-                                <td> <p>VAT :</p></td>
-                                <td><p>{vat}</p> </td>
+                                <td> <p>VAT :  </p></td>
+                                <td><p>$ {vat}</p> </td>
                             </tr>
                             <tr>
-                                <td> <p>Total Price:</p></td>
-                                <td><p>{total + vat}</p> </td>
+                                <td> <p>Total Price:  </p></td>
+                                <td><p>$ {total + vat}</p> </td>
                             </tr>
                         </table>
                         
